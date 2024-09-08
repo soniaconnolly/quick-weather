@@ -17,6 +17,10 @@ gem "jbuilder"
 # Silence warning: ostruct.rb was loaded from the standard library,
 # but will no longer be part of the default gems starting from Ruby 3.5.0.
 gem "ostruct"
+# HTTP requests
+gem "faraday"
+gem "faraday_middleware"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -42,7 +46,11 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
+  # Use RSpec
   gem "rspec-rails"
+
+  # Put environment variables in .env file
+  gem "dotenv"
 end
 
 group :development do
@@ -54,4 +62,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  # Record network requests and use on future test runs
+  gem "vcr"
 end
