@@ -9,7 +9,9 @@ class WeatherService
   # Returns: a hash { temp:, temp_min:, temp_max:, cached: }
   # Temperatures are Farenheit. They can be changed to Celsius by setting units: 'metric'
   # Raises an exception for connection errors, and ambiguous or unexpected/unparseable results
-  def self.call(lat:, lon:)
+  def self.call(geolocation)
+    raise StandardError.new(I18n.t('errors.invalid_location')) unless geolocation.valid?
+
     conn = Faraday.new("https://api.openweathermap.org") do |f|
       f.request :json # encode req bodies as JSON and automatically set the Content-Type header
       f.request :retry # retry transient failures
@@ -18,8 +20,8 @@ class WeatherService
 
     response = conn.get('/data/2.5/weather', {
       appid: ENV['OPENWEATHERMAP_API_KEY'],
-      lat: lat,
-      lon: lon,
+      lat: geolocation.lat,
+      lon: geolocation.lon,
       units: 'imperial',
     })
 
@@ -31,14 +33,12 @@ class WeatherService
   # Cache the OpenWeatherMap result for 30 minutes by country_code and postal_code
   # Some countries do not have a postal code, so don't cache in that case
   # Returns: a hash { temp:, temp_min:, temp_max:, cached: }
-  def self.call_with_cache(country_code:, postal_code:, lat:, lon:)
-    return call(lat: lat, lon: lon) if country_code.blank? || postal_code.blank?
+  def self.call_with_cache(geolocation)
+    return call(geolocation) if geolocation.key.blank?
 
-    key = "#{country_code}/#{postal_code}"
-
-    cached = Rails.cache.exist?(key)
-    result = Rails.cache.fetch(key, expires_in: 30.minutes) do
-      call(lat: lat, lon: lon)
+    cached = Rails.cache.exist?(geolocation.key)
+    result = Rails.cache.fetch(geolocation.key, expires_in: 30.minutes) do
+      call(geolocation)
     end
     result[:cached] = cached if result
     result

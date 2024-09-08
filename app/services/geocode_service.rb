@@ -3,7 +3,7 @@
 #  https://www.here.com/docs/bundle/geocoding-and-search-api-developer-guide/page/topics/quick-start.html
 #
 # Usage: GeocodeService.call(address)
-# Returns: a hash { lat:, lon:, :country_code, :postal_code }
+# Returns: a GeoLocation with lat, lon, country_code, and postal_code
 # Raises an exception for connection errors, and ambiguous or unexpected/unparseable results
 class GeocodeService
   def self.call(address)
@@ -39,13 +39,13 @@ class GeocodeService
         raise Faraday::ClientError.new(I18n.t('errors.geocoder_bad_response'))
       end
 
-      # Return a hash with symbol keys :lat, :lon, :country_code, :postal_code
-      {
+      # Return a GeoLocation
+      GeoLocation.new(
         lat: lat,
         lon: lon,
         country_code: item.dig('address', 'countryCode'),
         postal_code: item.dig('address', 'postalCode'),
-      }
+      )
     rescue ArgumentError, NoMethodError => e
       # If the response doesn't have the format we expect
       raise Faraday::ClientError.new(I18n.t('errors.geocoder_bad_response'))

@@ -4,12 +4,22 @@
 class GeoLocation
   attr_reader :lat, :lon, :country_code, :postal_code
 
-  def initialize(lat:, lon:, country_code:, postal_code:)
+  def initialize(lat:, lon:, country_code: nil, postal_code: nil)
     @lat = lat
     @lon = lon
     @country_code = country_code
     @postal_code = postal_code
   end
+
+  # Override == for convenience in specs
+  def ==(other_object)
+    lat == other_object.lat &&
+      lon == other_object.lon &&
+      country_code == other_object.country_code &&
+      postal_code == other_object.postal_code
+  end
+
+  alias :eql? :==
 
   # A GeoLocation is valid if latitude and longitude are valid
   def valid?

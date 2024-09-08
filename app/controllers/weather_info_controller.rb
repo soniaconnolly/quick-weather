@@ -4,14 +4,9 @@ class WeatherInfoController < ApplicationController
 
     begin
       if @address
-        geocode = GeocodeService.call(@address)
-        if geocode
-          @weather = WeatherService.call_with_cache(
-            country_code: geocode[:country_code],
-            postal_code: geocode[:postal_code],
-            lat: geocode[:lat],
-            lon: geocode[:lon]
-          )
+        geolocation = GeocodeService.call(@address)
+        if geolocation
+          @weather = WeatherService.call_with_cache(geolocation)
         end
       end
     rescue => e
