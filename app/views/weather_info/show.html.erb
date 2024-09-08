@@ -17,10 +17,6 @@
   <div><%= I18n.t('weather_info.labels.min_temp', temp: @weather[:temp_min]) %> ℉</div>
   <div><%= I18n.t('weather_info.labels.max_temp', temp: @weather[:temp_max]) %> ℉</div>
   <div>
-    <% if @weather[:cached] %>
-        <%= I18n.t('weather_info.labels.cached') %>
-    <% else %>
-        <%= I18n.t('weather_info.labels.not_cached') %>
-    <% end %>
+    <%= show_cache_message(@weather[:cached]) %>
   </div>
 <% end %>

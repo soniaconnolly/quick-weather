@@ -36,7 +36,7 @@ RSpec.describe 'weather_info/show.html.erb', type: :view do
       expect(rendered).to include I18n.t('weather_info.labels.min_temp', temp: temp_min)
     end
 
-    it 'displays the current temperature' do
+    it 'displays the max temperature' do
       expect(rendered).to include I18n.t('weather_info.labels.max_temp', temp: temp_max)
     end
 

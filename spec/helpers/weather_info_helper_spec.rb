@@ -1,15 +1,23 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the WeatherInfoHelper. For example:
-#
-# describe WeatherInfoHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe WeatherInfoHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe WeatherInfoHelper do
+  describe '#show_cache_message' do
+    let(:result) { show_cache_message(is_cached) }
+
+    context 'is_cached is true' do
+      let(:is_cached) { true }
+
+      it 'shows the correct message' do
+        expect(result).to eq(I18n.t('weather_info.labels.cached'))
+      end
+    end
+
+    context 'is_cached is false' do
+      let(:is_cached) { false }
+
+      it 'shows the correct message' do
+        expect(result).to eq(I18n.t('weather_info.labels.not_cached'))
+      end
+    end
+  end
 end
