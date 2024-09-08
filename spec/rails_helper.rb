@@ -56,6 +56,9 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-    config.hook_into :faraday
-  end
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :faraday
+  # Do not write API keys into vcr cassettes
+  config.filter_sensitive_data('FAKE_OPENWEATHERMAP_API_KEY') { ENV['OPENWEATHERMAP_API_KEY'] }
+  config.filter_sensitive_data('FAKE_HERE_API_KEY') { ENV['HERE_API_KEY'] }
+end

@@ -14,7 +14,7 @@ class GeocodeService
     end
 
     response = conn.get("/v1/geocode", {
-      apiKey: ENV["HERE_API_KEY"],
+      apiKey: ENV["HERE_API_KEY"] || 'FAKE_HERE_API_KEY', # Fake key for specs
       q: address
     })
 

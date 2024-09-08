@@ -19,7 +19,7 @@ class WeatherService
     end
 
     response = conn.get("/data/2.5/weather", {
-      appid: ENV["OPENWEATHERMAP_API_KEY"],
+      appid: ENV["OPENWEATHERMAP_API_KEY"] || 'FAKE_OPENWEATHERMAP_API_KEY', # Fake key for specs
       lat: geolocation.lat,
       lon: geolocation.lon,
       units: "imperial"
