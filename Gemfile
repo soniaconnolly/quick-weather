@@ -14,6 +14,9 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+# Silence warning: ostruct.rb was loaded from the standard library,
+# but will no longer be part of the default gems starting from Ruby 3.5.0.
+gem "ostruct"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
