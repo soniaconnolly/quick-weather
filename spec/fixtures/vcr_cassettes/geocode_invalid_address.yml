@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=hZDMqXpG3v6LsXwGE26HX6fLNJpYVzzPZH8BAZ-0rUE&q=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      cache-control:
+      - no-store, must-revalidate
+      content-type:
+      - application/json
+      date:
+      - Fri, 06 Sep 2024 16:43:57 GMT
+      expires:
+      - Sun, 26 Apr 1970 20:00:00 GMT
+      pragma:
+      - no-cache
+      server:
+      - openresty
+      strict-transport-security:
+      - max-age=8640000; includeSubDomains
+      x-correlation-id:
+      - 25cad81a-79c6-4d67-913d-dcd806b6ef73
+      x-request-id:
+      - REQ-c457fb03-5b5e-4b65-a266-0275d5257e93
+      x-served-by:
+      - us-west-2
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":400,"title":"Illegal input for parameter ''q''","cause":"Actual
+        parameter value: ''''","action":"Value must be non-empty","correlationId":"25cad81a-79c6-4d67-913d-dcd806b6ef73","requestId":"REQ-c457fb03-5b5e-4b65-a266-0275d5257e93"}'
+  recorded_at: Fri, 06 Sep 2024 16:43:57 GMT
+recorded_with: VCR 6.3.1

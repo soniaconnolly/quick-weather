@@ -28,4 +28,9 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  errors:
+    ambiguous_address: Ambiguous address
+    invalid_address: Invalid address
+    location_not_found: Location not found
+    geocoder_bad_response: 'Internal error: bad response from geocoder'
+    geocoder_no_response: No response from geocoder

@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=hZDMqXpG3v6LsXwGE26HX6fLNJpYVzzPZH8BAZ-0rUE&q=2410+Mann+St.%2C+Des+Moines%2C+IA+50310
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-store, must-revalidate
+      content-type:
+      - application/json
+      date:
+      - Fri, 06 Sep 2024 16:21:50 GMT
+      expires:
+      - Sun, 26 Apr 1970 20:00:00 GMT
+      pragma:
+      - no-cache
+      server:
+      - openresty
+      strict-transport-security:
+      - max-age=8640000; includeSubDomains
+      usage:
+      - _:1
+      x-correlation-id:
+      - b0bd0c27-23e5-41b6-9eb9-5b046ad51778
+      x-request-id:
+      - REQ-50e3465e-2775-412b-b2f8-9b29625c0d07
+      x-served-by:
+      - us-west-2
+      content-length:
+      - '780'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[{"title":"2410 Mann Ave, Des Moines, IA 50310-5565, United
+        States","id":"here:af:streetsection:ohJu0cT29gMKZtUuA.Rj-A:EAIaBDI0MTA","resultType":"houseNumber","houseNumberType":"interpolated","address":{"label":"2410
+        Mann Ave, Des Moines, IA 50310-5565, United States","countryCode":"USA","countryName":"United
+        States","stateCode":"IA","state":"Iowa","county":"Polk","city":"Des Moines","district":"Martin-Hickman","street":"Mann
+        Ave","postalCode":"50310-5565","houseNumber":"2410"},"position":{"lat":41.61745,"lng":-93.65158},"access":[{"lat":41.61758,"lng":-93.6516}],"mapView":{"west":-93.65278,"south":41.61655,"east":-93.65038,"north":41.61835},"scoring":{"queryScore":0.97,"fieldScore":{"state":1.0,"city":1.0,"streets":[0.9],"houseNumber":1.0,"postalCode":1.0}}}]}'
+  recorded_at: Fri, 06 Sep 2024 16:21:50 GMT
+recorded_with: VCR 6.3.1
