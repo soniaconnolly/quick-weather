@@ -2,9 +2,8 @@
 # OpenWeatherMap documentation, including how to get an API key:
 #  https://openweathermap.org/appid
 # Note that the free tier uses version 2.5, while most of the documentation is for 3.0
-# Usage: WeatherService.call(lat: nnn, lon: nnn)
+# Usage: WeatherService.call(lat: nnn, lon: nnn) where nnn are valid latitude and longitude decimal numbers
 # Usage: WeatherService.call_with_cache(country_code: 3 letter string, postal_code: string, lat: nnn, lon: nnn )
-
 class WeatherService
   # Returns: a hash { temp:, temp_min:, temp_max:, cached: }
   # Temperatures are Farenheit. They can be changed to Celsius by setting units: 'metric'

@@ -79,7 +79,6 @@ With an ambiguous address
 
 ![Ambiguous address message](images/ambiguous_address.png)
 
-
 ## Discussion
 ### Scalability
 The app is using the default Rails cache. For a production application, the cache
@@ -91,13 +90,17 @@ For high loads, Rails servers can be scaled via Kubernetes or AWS EC2 instances.
 agreements would be needed with the external services HERE and OpenWeatherMap to agree on
 the scale of traffic that is supported and what happens if a service goes down or starts
 returning unexpected results.
+
+A queueing service such as [Sidekiq](https://github.com/sidekiq/sidekiq) could be added to
+process API calls in the background.
+### Security
+Security policies are needed in the case of API key exposure, such as accidentally
+committing them to GitHub. Keys should be immediately rotated in case of an incident,
+and rotated regularly as a precaution.
 ### Frontend
-I looked at adding [Boostrap](https://getbootstrap.com), but it added a lot of files and code
+I looked at adding [Bootstrap](https://getbootstrap.com), but it added a lot of files and code
 for not much benefit. For a production app, it might be a better return on investment. I used
 [SimpleCSS](https://simplecss.org) instead.
-### Form submission
-I used GET for the form submission rather than POST so that users can share a link to a specific
-address. It would be straightforward to change the form action to POST for improved security.
 ### Extended forecast
 With an upgrade to the OpenWeatherMap 3.0 API, it would be straightforward to add
 the extended forecast in WeatherService by retrieving it from the results, adding
