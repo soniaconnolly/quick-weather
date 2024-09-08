@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/2.5/weather?appid=8cf34dc4328625bf46d7421c45473a27&lat=-8.55409&lon=125.57033&units=imperial
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=FAKE_OPENWEATHERMAP_API_KEY&lat=-8.55409&lon=125.57033&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -17,11 +17,11 @@ http_interactions:
       server:
       - openresty
       date:
-      - Fri, 06 Sep 2024 23:12:20 GMT
+      - Sun, 08 Sep 2024 02:15:00 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '493'
+      - '495'
       connection:
       - keep-alive
       x-cache-key:
@@ -34,7 +34,7 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"coord":{"lon":125.5703,"lat":-8.5541},"weather":[{"id":801,"main":"Clouds","description":"few
-        clouds","icon":"02d"}],"base":"stations","main":{"temp":80.26,"feels_like":81.55,"temp_min":80.26,"temp_max":80.26,"pressure":1015,"humidity":55,"sea_level":1015,"grnd_level":971},"visibility":10000,"wind":{"speed":3.09,"deg":136,"gust":6.53},"clouds":{"all":11},"dt":1725664340,"sys":{"country":"TL","sunrise":1725658573,"sunset":1725701741},"timezone":32400,"id":1645457,"name":"Dili","cod":200}'
-  recorded_at: Fri, 06 Sep 2024 23:12:20 GMT
+      string: '{"coord":{"lon":125.5703,"lat":-8.5541},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":84.45,"feels_like":90.45,"temp_min":84.45,"temp_max":84.45,"pressure":1014,"humidity":67,"sea_level":1014,"grnd_level":971},"visibility":10000,"wind":{"speed":7.49,"deg":43,"gust":8.72},"clouds":{"all":58},"dt":1725761700,"sys":{"country":"TL","sunrise":1725744939,"sunset":1725788134},"timezone":32400,"id":1645457,"name":"Dili","cod":200}'
+  recorded_at: Sun, 08 Sep 2024 02:15:00 GMT
 recorded_with: VCR 6.3.1

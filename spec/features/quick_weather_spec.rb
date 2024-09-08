@@ -9,9 +9,9 @@ RSpec.describe 'Quick Weather' do
       click_button I18n.t('weather_info.labels.submit')
     end
 
-    expect(page).to have_text(I18n.t('weather_info.labels.current_temp', temp: 70.12))
-    expect(page).to have_text(I18n.t('weather_info.labels.min_temp', temp: 68.32))
-    expect(page).to have_text(I18n.t('weather_info.labels.max_temp', temp: 71.85))
+    expect(page).to have_text(I18n.t('weather_info.labels.current_temp', temp: 59.25))
+    expect(page).to have_text(I18n.t('weather_info.labels.min_temp', temp: 57.38))
+    expect(page).to have_text(I18n.t('weather_info.labels.max_temp', temp: 61.21))
   end
 
   it 'shows a message for an ambiguous address' do

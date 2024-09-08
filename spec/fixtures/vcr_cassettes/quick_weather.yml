@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=hZDMqXpG3v6LsXwGE26HX6fLNJpYVzzPZH8BAZ-0rUE&q=2410+Mann+Ave%2C+Des+Moines%2C+IA+50310
+    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=FAKE_HERE_API_KEY&q=2410+Mann+Ave%2C+Des+Moines%2C+IA+50310
     body:
       encoding: US-ASCII
       string: ''
@@ -19,9 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Sat, 07 Sep 2024 23:39:10 GMT
-      expires:
-      - Sun, 26 Apr 1970 20:00:00 GMT
+      - Sun, 08 Sep 2024 02:14:59 GMT
       pragma:
       - no-cache
       server:
@@ -31,13 +29,13 @@ http_interactions:
       usage:
       - _:1
       x-correlation-id:
-      - f8f89ecf-b3e8-4139-a9a9-add83df5ab70
+      - 9c7b7c06-c4e1-4cb6-ac97-022825e6cb02
       x-request-id:
-      - REQ-1fe7c619-9351-4f49-8ee3-79b965c83d78
+      - REQ-3a073f28-b211-4a54-ad5e-124527600584
       x-served-by:
       - us-west-2
-      content-length:
-      - '779'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
     body:
@@ -47,10 +45,10 @@ http_interactions:
         Mann Ave, Des Moines, IA 50310-5565, United States","countryCode":"USA","countryName":"United
         States","stateCode":"IA","state":"Iowa","county":"Polk","city":"Des Moines","district":"Martin-Hickman","street":"Mann
         Ave","postalCode":"50310-5565","houseNumber":"2410"},"position":{"lat":41.61745,"lng":-93.65158},"access":[{"lat":41.61758,"lng":-93.6516}],"mapView":{"west":-93.65278,"south":41.61655,"east":-93.65038,"north":41.61835},"scoring":{"queryScore":1.0,"fieldScore":{"state":1.0,"city":1.0,"streets":[1.0],"houseNumber":1.0,"postalCode":1.0}}}]}'
-  recorded_at: Sat, 07 Sep 2024 23:39:10 GMT
+  recorded_at: Sun, 08 Sep 2024 02:14:59 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/2.5/weather?appid=8cf34dc4328625bf46d7421c45473a27&lat=41.61745&lon=-93.65158&units=imperial
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=FAKE_OPENWEATHERMAP_API_KEY&lat=41.61745&lon=-93.65158&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -65,11 +63,11 @@ http_interactions:
       server:
       - openresty
       date:
-      - Sat, 07 Sep 2024 23:39:10 GMT
+      - Sun, 08 Sep 2024 02:15:00 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '516'
+      - '502'
       connection:
       - keep-alive
       x-cache-key:
@@ -82,8 +80,8 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"coord":{"lon":-93.6516,"lat":41.6175},"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"base":"stations","main":{"temp":70.12,"feels_like":69.04,"temp_min":68.32,"temp_max":71.85,"pressure":1021,"humidity":47,"sea_level":1021,"grnd_level":989},"visibility":10000,"wind":{"speed":5.75,"deg":160},"clouds":{"all":40},"dt":1725752350,"sys":{"type":2,"id":2005004,"country":"US","sunrise":1725709644,"sunset":1725755871},"timezone":-18000,"id":4853828,"name":"Des
+      string: '{"coord":{"lon":-93.6516,"lat":41.6175},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":59.25,"feels_like":58.17,"temp_min":57.38,"temp_max":61.21,"pressure":1022,"humidity":70,"sea_level":1022,"grnd_level":989},"visibility":10000,"wind":{"speed":0,"deg":0},"clouds":{"all":0},"dt":1725761700,"sys":{"type":2,"id":2005004,"country":"US","sunrise":1725709644,"sunset":1725755871},"timezone":-18000,"id":4853828,"name":"Des
         Moines","cod":200}'
-  recorded_at: Sat, 07 Sep 2024 23:39:10 GMT
+  recorded_at: Sun, 08 Sep 2024 02:14:59 GMT
 recorded_with: VCR 6.3.1

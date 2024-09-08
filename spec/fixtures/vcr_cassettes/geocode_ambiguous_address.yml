@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=hZDMqXpG3v6LsXwGE26HX6fLNJpYVzzPZH8BAZ-0rUE&q=Springfield
+    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=FAKE_HERE_API_KEY&q=Springfield
     body:
       encoding: US-ASCII
       string: ''
@@ -19,9 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 06 Sep 2024 16:46:56 GMT
-      expires:
-      - Sun, 26 Apr 1970 20:00:00 GMT
+      - Sun, 08 Sep 2024 02:15:00 GMT
       pragma:
       - no-cache
       server:
@@ -31,9 +29,9 @@ http_interactions:
       usage:
       - _:1
       x-correlation-id:
-      - 79652b5c-459d-4ca9-ac71-b82c003a8360
+      - 48dd16a4-c6a6-46b0-b425-f2ab6e4c939a
       x-request-id:
-      - REQ-b4b6c80b-b2b3-41dc-8875-59eb52f8ad14
+      - REQ-86dc0b98-1d2a-4043-999d-79ebeac2a650
       x-served-by:
       - us-west-2
       content-length:
@@ -87,5 +85,5 @@ http_interactions:
         Twp, PA, United States","id":"here:cm:namedplace:21011375","resultType":"locality","localityType":"city","address":{"label":"Springfield
         Twp, PA, United States","countryCode":"USA","countryName":"United States","stateCode":"PA","state":"Pennsylvania","county":"Bucks","city":"Springfield
         Twp","postalCode":"18036"},"position":{"lat":40.52927,"lng":-75.29594},"mapView":{"west":-75.40948,"south":40.47862,"east":-75.21561,"north":40.58249},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}}]}'
-  recorded_at: Fri, 06 Sep 2024 16:46:56 GMT
+  recorded_at: Sun, 08 Sep 2024 02:15:00 GMT
 recorded_with: VCR 6.3.1

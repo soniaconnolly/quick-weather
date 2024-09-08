@@ -9,7 +9,7 @@ RSpec.describe 'WeatherService' do
 
       context 'With a valid lat/lon' do
       it 'returns weather information' do
-        expected = { temp: 70.14, temp_max: 71.85, temp_min: 69.22 }
+        expected = { temp: 59.25, temp_max: 61.21, temp_min: 57.38 }
         VCR.use_cassette('weather_valid_location') do
           expect(WeatherService.call(geolocation)).to eq(expected)
         end
@@ -49,7 +49,7 @@ RSpec.describe 'WeatherService' do
     let(:postal_code) { 50310 }
     let(:lat) { 41.61745 }
     let(:lon) { -93.65158 }
-    let(:expected) { { temp: 70.14, temp_max: 71.85, temp_min: 69.22, cached: cached } }
+    let(:expected) { { temp: 59.25, temp_max: 61.21, temp_min: 57.38, cached: cached } }
 
     context 'value is not cached' do
       let(:cached) { false }
@@ -67,7 +67,7 @@ RSpec.describe 'WeatherService' do
       let(:cached) { true }
 
       it 'returns the cached value' do
-        cached_value = { temp: 70.14, temp_max: 71.85, temp_min: 69.22 }
+        cached_value = { temp: 59.25, temp_max: 61.21, temp_min: 57.38 }
 
         allow(Rails.cache).to receive(:exist?).with(geolocation.key).and_return(cached)
         allow(Rails.cache).to receive(:fetch).with(geolocation.key, { expires_in: 30.minutes }).and_return(cached_value)
@@ -82,7 +82,7 @@ RSpec.describe 'WeatherService' do
       let(:country_code) { 'TLS' }
       let(:lat) { -8.55409 }
       let(:lon) { 125.57033 }
-      let(:expected) { { temp: 80.26, temp_max: 80.26, temp_min: 80.26 } }
+      let(:expected) { { temp: 84.45, temp_max: 84.45, temp_min: 84.45 } }
 
       it 'makes the network call and does not cache it' do
         VCR.use_cassette('weather_timor_leste') do
