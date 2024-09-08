@@ -41,9 +41,9 @@ en:
     heading: Quick Weather Check
     labels:
       address: Please enter an address
-      cached: Data is from the last 30 minutes.
+      cached: Information is from the last 30 minutes.
       current_temp: 'Current Temperature: %{temp}'
       min_temp: 'Low Temperature: %{temp}'
       max_temp: 'High Temperature: %{temp}'
-      not_cached: Data is current.
-      submit: Get temperatures
+      not_cached: Information is current.
+      submit: Get Temperatures
