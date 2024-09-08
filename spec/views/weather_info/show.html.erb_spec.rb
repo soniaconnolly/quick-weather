@@ -23,7 +23,7 @@ RSpec.describe 'weather_info/show.html.erb', type: :view do
     let(:cached) { false }
 
     before do
-      assign(:weather, { temp: temp, temp_min: temp_min, temp_max: temp_max, cached: cached} )
+      assign(:weather, { temp: temp, temp_min: temp_min, temp_max: temp_max, cached: cached })
 
       render
     end

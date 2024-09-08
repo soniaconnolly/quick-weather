@@ -1,6 +1,6 @@
 class WeatherInfoController < ApplicationController
   def show
-    @address = params['address']
+    @address = params["address"]
 
     begin
       if @address
@@ -10,7 +10,7 @@ class WeatherInfoController < ApplicationController
         end
       end
     rescue => e
-      flash.now['alert'] = e.message
+      flash.now["alert"] = e.message
     end
   end
 end

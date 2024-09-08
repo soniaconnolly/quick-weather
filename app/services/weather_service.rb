@@ -10,7 +10,7 @@ class WeatherService
   # Temperatures are Farenheit. They can be changed to Celsius by setting units: 'metric'
   # Raises an exception for connection errors, and ambiguous or unexpected/unparseable results
   def self.call(geolocation)
-    raise StandardError.new(I18n.t('errors.invalid_location')) unless geolocation.valid?
+    raise StandardError.new(I18n.t("errors.invalid_location")) unless geolocation.valid?
 
     conn = Faraday.new("https://api.openweathermap.org") do |f|
       f.request :json # encode req bodies as JSON and automatically set the Content-Type header
@@ -18,14 +18,14 @@ class WeatherService
       f.response :json # decode response bodies as JSON
     end
 
-    response = conn.get('/data/2.5/weather', {
-      appid: ENV['OPENWEATHERMAP_API_KEY'],
+    response = conn.get("/data/2.5/weather", {
+      appid: ENV["OPENWEATHERMAP_API_KEY"],
       lat: geolocation.lat,
       lon: geolocation.lon,
-      units: 'imperial',
+      units: "imperial"
     })
 
-    raise Faraday::ClientError.new I18n.t('errors.openweathermap_no_response') unless response
+    raise Faraday::ClientError.new I18n.t("errors.openweathermap_no_response") unless response
 
     self.parse_response(response.body)
   end
@@ -47,19 +47,19 @@ class WeatherService
   # Parse the response from the OpenWeatherMap service.
   # This is only public to allow testing of unexpected responses
   def self.parse_response(body)
-    raise StandardError.new(I18n.t('errors.invalid_location')) if body.blank? || body['main'].blank?
-    
+    raise StandardError.new(I18n.t("errors.invalid_location")) if body.blank? || body["main"].blank?
+
     begin
-      main = body['main']
+      main = body["main"]
       # Return a hash with symbol keys :temp, :temp_min, :temp_max
       {
-        temp: main['temp'],
-        temp_min: main['temp_min'],
-        temp_max: main['temp_max'],
+        temp: main["temp"],
+        temp_min: main["temp_min"],
+        temp_max: main["temp_max"]
       }
     rescue ArgumentError, NoMethodError => e
       # If the response doesn't have the format we expect
-      raise Faraday::ClientError.new(I18n.t('errors.openweathermap_bad_response'))
+      raise Faraday::ClientError.new(I18n.t("errors.openweathermap_bad_response"))
     end
   end
 end

@@ -48,7 +48,7 @@ RSpec.describe 'GeocodeService' do
   describe '#parse_response' do
     context 'Geocoder returns a blank position' do
       it 'raises a bad response exception' do
-        body = { 'items' => [{ 'position' => nil }] }
+        body = { 'items' => [ { 'position' => nil } ] }
 
         expect { GeocodeService.parse_response(body) }.to raise_error(
           Faraday::ClientError,
@@ -59,7 +59,7 @@ RSpec.describe 'GeocodeService' do
 
     context 'Geocoder returns strings for lat/lng data' do
       it 'raises a bad response exception' do
-        body = { 'items' => [{ 'position' => { 'lat' => 'abc', 'lng' => 'def' } }] }
+        body = { 'items' => [ { 'position' => { 'lat' => 'abc', 'lng' => 'def' } } ] }
 
         expect { GeocodeService.parse_response(body) }.to raise_error(
           Faraday::ClientError,

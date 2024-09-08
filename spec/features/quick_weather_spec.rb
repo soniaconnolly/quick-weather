@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Quick Weather' do
-
   it 'shows temperatures for an address' do
     address = '2410 Mann Ave, Des Moines, IA 50310'
     visit root_url

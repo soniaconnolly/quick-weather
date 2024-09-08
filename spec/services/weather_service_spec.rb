@@ -70,7 +70,7 @@ RSpec.describe 'WeatherService' do
         cached_value = { temp: 70.14, temp_max: 71.85, temp_min: 69.22 }
 
         allow(Rails.cache).to receive(:exist?).with(geolocation.key).and_return(cached)
-        allow(Rails.cache).to receive(:fetch).with(geolocation.key, {expires_in: 30.minutes}).and_return(cached_value)
+        allow(Rails.cache).to receive(:fetch).with(geolocation.key, { expires_in: 30.minutes }).and_return(cached_value)
         expect(Faraday).not_to receive(:new).and_call_original
         expect(WeatherService.call_with_cache(geolocation)).to eq(expected)
       end
