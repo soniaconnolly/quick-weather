@@ -3,7 +3,7 @@
 #  https://www.here.com/docs/bundle/geocoding-and-search-api-developer-guide/page/topics/quick-start.html
 #
 # Usage: GeocodeService.call(address)
-# Returns: { lat:, lon: }, a hash with symbolic keys lat:, lon: (to match OpenWeatherMap args)
+# Returns: a hash { lat:, lon:, :country_code, :postal_code }
 # Raises an exception for connection errors, and ambiguous or unexpected/unparseable results
 class GeocodeService
   def self.call(address)
@@ -31,9 +31,21 @@ class GeocodeService
     begin
       raise StandardError.new(I18n.t('errors.ambiguous_address')) if body['items'].count != 1
 
-      position = body['items'].first['position']
-      # Return a hash with symbol keys :lat, :lon
-      { lat: position['lat'], lon: position['lng'] }
+      item = body['items'].first
+      lat = item.dig('position', 'lat')
+      lon = item.dig('position', 'lng')
+
+      if lat.blank? || lon.blank? || !lat.is_a?(Numeric) || !lon.is_a?(Numeric)
+        raise Faraday::ClientError.new(I18n.t('errors.geocoder_bad_response'))
+      end
+
+      # Return a hash with symbol keys :lat, :lon, :country_code, :postal_code
+      {
+        lat: lat,
+        lon: lon,
+        country_code: item.dig('address', 'countryCode'),
+        postal_code: item.dig('address', 'postalCode'),
+      }
     rescue ArgumentError, NoMethodError => e
       # If the response doesn't have the format we expect
       raise Faraday::ClientError.new(I18n.t('errors.geocoder_bad_response'))

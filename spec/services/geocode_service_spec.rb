@@ -5,9 +5,15 @@ RSpec.describe 'GeocodeService' do
     context 'With a valid address' do
       it 'returns a lat/long pair' do
         address = '2410 Mann St., Des Moines, IA 50310'
+        expected = {
+          :country_code => 'USA',
+          :lat => 41.61745,
+          :lon => -93.65158,
+          :postal_code => '50310-5565',
+        }
 
         VCR.use_cassette('geocode_valid_address') do
-          expect(GeocodeService.call(address)).to eq({ lat: 41.61745, lon: -93.65158 })
+          expect(GeocodeService.call(address)).to eq(expected)
         end
       end
     end
@@ -43,6 +49,17 @@ RSpec.describe 'GeocodeService' do
     context 'Geocoder returns a blank position' do
       it 'raises a bad response exception' do
         body = { 'items' => [{ 'position' => nil }] }
+
+        expect { GeocodeService.parse_response(body) }.to raise_error(
+          Faraday::ClientError,
+          I18n.t('errors.geocoder_bad_response'),
+        )
+      end
+    end
+
+    context 'Geocoder returns strings for lat/lng data' do
+      it 'raises a bad response exception' do
+        body = { 'items' => [{ 'position' => { 'lat' => 'abc', 'lng' => 'def' } }] }
 
         expect { GeocodeService.parse_response(body) }.to raise_error(
           Faraday::ClientError,
