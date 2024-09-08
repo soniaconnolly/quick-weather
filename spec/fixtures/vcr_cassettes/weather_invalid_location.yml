@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=8cf34dc4328625bf46d7421c45473a27&lat&lon=-93.65158&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - openresty
+      date:
+      - Fri, 06 Sep 2024 18:45:07 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '44'
+      connection:
+      - keep-alive
+      x-cache-key:
+      - "/data/2.5/weather?lat=&lon=-93.65&units=imperial"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"400","message":"Nothing to geocode"}'
+  recorded_at: Fri, 06 Sep 2024 18:45:07 GMT
+recorded_with: VCR 6.3.1

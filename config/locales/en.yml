@@ -30,7 +30,10 @@
 en:
   errors:
     ambiguous_address: Ambiguous address
+    geocoder_bad_response: 'Internal error: bad response from HERE geocoder'
+    geocoder_no_response: No response from HERE geocoder
     invalid_address: Invalid address
+    invalid_location: Cannot access weather for this location
     location_not_found: Location not found
-    geocoder_bad_response: 'Internal error: bad response from geocoder'
-    geocoder_no_response: No response from geocoder
+    openweathermap_bad_response: 'Internal error: bad response from OpenWeatherMap'
+    openweathermap_no_response: No response from OpenWeatherMap
