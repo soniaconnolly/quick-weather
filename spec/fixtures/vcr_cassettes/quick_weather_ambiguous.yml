@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocode.search.hereapi.com/v1/geocode?apiKey=hZDMqXpG3v6LsXwGE26HX6fLNJpYVzzPZH8BAZ-0rUE&q=Springfield
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-store, must-revalidate
+      content-type:
+      - application/json
+      date:
+      - Sat, 07 Sep 2024 23:48:46 GMT
+      pragma:
+      - no-cache
+      server:
+      - openresty
+      strict-transport-security:
+      - max-age=8640000; includeSubDomains
+      usage:
+      - _:1
+      x-correlation-id:
+      - 0af0a767-b32e-4213-972c-9663cf858725
+      x-request-id:
+      - REQ-2998002a-2f31-4fdb-b29d-d92ec186fea5
+      x-served-by:
+      - us-west-2
+      content-length:
+      - '10070'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":[{"title":"Springfield, IL, United States","id":"here:cm:namedplace:21004800","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        IL, United States","countryCode":"USA","countryName":"United States","stateCode":"IL","state":"Illinois","county":"Sangamon","city":"Springfield","postalCode":"62701"},"position":{"lat":39.8013,"lng":-89.6436},"mapView":{"west":-89.77319,"south":39.65361,"east":-89.56855,"north":39.87426},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        MO, United States","id":"here:cm:namedplace:21021389","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        MO, United States","countryCode":"USA","countryName":"United States","stateCode":"MO","state":"Missouri","county":"Greene","city":"Springfield","postalCode":"65806"},"position":{"lat":37.20897,"lng":-93.29159},"mapView":{"west":-93.41318,"south":37.09244,"east":-93.17855,"north":37.27705},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        VA, United States","id":"here:cm:namedplace:21022880","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        VA, United States","countryCode":"USA","countryName":"United States","stateCode":"VA","state":"Virginia","county":"Fairfax","city":"Springfield","postalCode":"22150"},"position":{"lat":38.77917,"lng":-77.19166},"mapView":{"west":-77.27706,"south":38.71964,"east":-77.1516,"north":38.8121},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        MA, United States","id":"here:cm:namedplace:21014472","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        MA, United States","countryCode":"USA","countryName":"United States","stateCode":"MA","state":"Massachusetts","county":"Hampden","city":"Springfield","postalCode":"01103"},"position":{"lat":42.10125,"lng":-72.58929},"mapView":{"west":-72.6221,"south":42.06371,"east":-72.47102,"north":42.16214},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        MB, Canada","id":"here:cm:namedplace:21163984","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        MB, Canada","countryCode":"CAN","countryName":"Canada","stateCode":"MB","state":"Manitoba","county":"Manitoba","city":"Springfield","postalCode":"R5L"},"position":{"lat":49.86807,"lng":-96.63752},"mapView":{"west":-97.02702,"south":49.7958,"east":-96.35674,"north":50.06298},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        OH, United States","id":"here:cm:namedplace:21027532","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        OH, United States","countryCode":"USA","countryName":"United States","stateCode":"OH","state":"Ohio","county":"Clark","city":"Springfield","postalCode":"45502"},"position":{"lat":39.92503,"lng":-83.80673},"mapView":{"west":-83.98733,"south":39.80028,"east":-83.67359,"north":40.0548},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        OR, United States","id":"here:cm:namedplace:21037095","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        OR, United States","countryCode":"USA","countryName":"United States","stateCode":"OR","state":"Oregon","county":"Lane","city":"Springfield","postalCode":"97477"},"position":{"lat":44.04787,"lng":-123.01955},"mapView":{"west":-123.05011,"south":44.02702,"east":-122.87902,"north":44.09511},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        PA, United States","id":"here:cm:namedplace:21011998","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        PA, United States","countryCode":"USA","countryName":"United States","stateCode":"PA","state":"Pennsylvania","county":"Delaware","city":"Springfield","postalCode":"19064"},"position":{"lat":39.9307,"lng":-75.32185},"mapView":{"west":-75.37638,"south":39.9073,"east":-75.30769,"north":39.95706},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        NJ, United States","id":"here:cm:namedplace:21018368","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        NJ, United States","countryCode":"USA","countryName":"United States","stateCode":"NJ","state":"New
+        Jersey","county":"Union","city":"Springfield","postalCode":"07081"},"position":{"lat":40.70453,"lng":-74.3175},"mapView":{"west":-74.35744,"south":40.67959,"east":-74.29666,"north":40.7201},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        TN, United States","id":"here:cm:namedplace:21020812","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        TN, United States","countryCode":"USA","countryName":"United States","stateCode":"TN","state":"Tennessee","county":"Robertson","city":"Springfield","postalCode":"37172"},"position":{"lat":36.50939,"lng":-86.88542},"mapView":{"west":-86.94467,"south":36.44488,"east":-86.8142,"north":36.54762},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        VT, United States","id":"here:cm:namedplace:21155383","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        VT, United States","countryCode":"USA","countryName":"United States","stateCode":"VT","state":"Vermont","county":"Windsor","city":"Springfield","postalCode":"05156"},"position":{"lat":43.29846,"lng":-72.48196},"mapView":{"west":-72.54911,"south":43.23352,"east":-72.39092,"north":43.41294},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        KY, United States","id":"here:cm:namedplace:21034974","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        KY, United States","countryCode":"USA","countryName":"United States","stateCode":"KY","state":"Kentucky","county":"Washington","city":"Springfield","postalCode":"40069"},"position":{"lat":37.68548,"lng":-85.22266},"mapView":{"west":-85.39732,"south":37.61309,"east":-85.03615,"north":37.83797},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        GA, United States","id":"here:cm:namedplace:21024231","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        GA, United States","countryCode":"USA","countryName":"United States","stateCode":"GA","state":"Georgia","county":"Effingham","city":"Springfield","postalCode":"31329"},"position":{"lat":32.37121,"lng":-81.31371},"mapView":{"west":-81.32518,"south":32.34991,"east":-81.29351,"north":32.38133},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        LA, United States","id":"here:cm:namedplace:21035223","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        LA, United States","countryCode":"USA","countryName":"United States","stateCode":"LA","state":"Louisiana","county":"Livingston","city":"Springfield","postalCode":"70462"},"position":{"lat":30.42899,"lng":-90.54913},"mapView":{"west":-90.66886,"south":30.30794,"east":-90.52756,"north":30.45616},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        NSW 2630, Australia","id":"here:cm:namedplace:1469266551","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        NSW 2630, Australia","countryCode":"AUS","countryName":"Australia","stateCode":"NSW","state":"New
+        South Wales","city":"Springfield","postalCode":"2630"},"position":{"lat":-36.54445,"lng":149.08068},"mapView":{"west":148.99324,"south":-36.60738,"east":149.2498,"north":-36.46422},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        QLD 4871, Australia","id":"here:cm:namedplace:1469266552","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        QLD 4871, Australia","countryCode":"AUS","countryName":"Australia","stateCode":"QLD","state":"Queensland","city":"Springfield","postalCode":"4871"},"position":{"lat":-17.88164,"lng":144.42187},"mapView":{"west":144.30287,"south":-18.05528,"east":144.74721,"north":-17.80649},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield,
+        MI, United States","id":"here:cm:namedplace:21007426","resultType":"locality","localityType":"city","address":{"label":"Springfield,
+        MI, United States","countryCode":"USA","countryName":"United States","stateCode":"MI","state":"Michigan","county":"Calhoun","city":"Springfield","postalCode":"49037"},"position":{"lat":42.32256,"lng":-85.23913},"mapView":{"west":-85.2754,"south":42.31193,"east":-85.20927,"north":42.34561},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield
+        Twp, MI, United States","id":"here:cm:namedplace:21008745","resultType":"locality","localityType":"city","address":{"label":"Springfield
+        Twp, MI, United States","countryCode":"USA","countryName":"United States","stateCode":"MI","state":"Michigan","county":"Oakland","city":"Springfield
+        Twp","postalCode":"48350"},"position":{"lat":42.75269,"lng":-83.53741},"mapView":{"west":-83.5683,"south":42.69906,"east":-83.44413,"north":42.78932},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield
+        Twp, NJ, United States","id":"here:cm:namedplace:21010699","resultType":"locality","localityType":"city","address":{"label":"Springfield
+        Twp, NJ, United States","countryCode":"USA","countryName":"United States","stateCode":"NJ","state":"New
+        Jersey","county":"Burlington","city":"Springfield Twp","postalCode":"08041"},"position":{"lat":40.03627,"lng":-74.69467},"mapView":{"west":-74.81294,"south":39.99243,"east":-74.61919,"north":40.07675},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}},{"title":"Springfield
+        Twp, PA, United States","id":"here:cm:namedplace:21011375","resultType":"locality","localityType":"city","address":{"label":"Springfield
+        Twp, PA, United States","countryCode":"USA","countryName":"United States","stateCode":"PA","state":"Pennsylvania","county":"Bucks","city":"Springfield
+        Twp","postalCode":"18036"},"position":{"lat":40.52927,"lng":-75.29594},"mapView":{"west":-75.40948,"south":40.47862,"east":-75.21561,"north":40.58249},"scoring":{"queryScore":1.0,"fieldScore":{"city":1.0}}}]}'
+  recorded_at: Sat, 07 Sep 2024 23:48:46 GMT
+recorded_with: VCR 6.3.1
