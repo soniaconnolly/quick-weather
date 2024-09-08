@@ -1,2 +1,26 @@
-<h1>WeatherInfo#show</h1>
-<p>Find me in app/views/weather_info/show.html.erb</p>
+<h1><%= t('weather_info.heading') %></h1>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_with(method: 'get', local: true) do %>
+    <%= label :address, t('weather_info.labels.address') %><br>
+    <%= text_field_tag(:address, @address, size: 70) %><br>
+    <%= submit_tag(t('weather_info.labels.submit')) %>
+<% end %>
+
+<% if defined?(@weather) %>
+  <div><%= I18n.t('weather_info.labels.current_temp', temp: @weather[:temp]) %> ℉</div>
+  <div><%= I18n.t('weather_info.labels.min_temp', temp: @weather[:temp_min]) %> ℉</div>
+  <div><%= I18n.t('weather_info.labels.max_temp', temp: @weather[:temp_max]) %> ℉</div>
+  <div>
+    <% if @weather[:cached] %>
+        <%= I18n.t('weather_info.labels.cached') %>
+    <% else %>
+        <%= I18n.t('weather_info.labels.not_cached') %>
+    <% end %>
+  </div>
+<% end %>

@@ -29,7 +29,7 @@
 
 en:
   errors:
-    ambiguous_address: Ambiguous address
+    ambiguous_address: Ambiguous address. Please add more details, such as a zip code or postal code.
     geocoder_bad_response: 'Internal error: bad response from HERE geocoder'
     geocoder_no_response: No response from HERE geocoder
     invalid_address: Invalid address
@@ -37,3 +37,13 @@ en:
     location_not_found: Location not found
     openweathermap_bad_response: 'Internal error: bad response from OpenWeatherMap'
     openweathermap_no_response: No response from OpenWeatherMap
+  weather_info:
+    heading: Quick Weather Check
+    labels:
+      address: Please enter an address
+      cached: Data is from the last 30 minutes.
+      current_temp: 'Current Temperature: %{temp}'
+      min_temp: 'Low Temperature: %{temp}'
+      max_temp: 'High Temperature: %{temp}'
+      not_cached: Data is current.
+      submit: Get temperatures
