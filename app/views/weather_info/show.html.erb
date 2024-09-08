@@ -1,7 +1,9 @@
-<h1><%= t('weather_info.heading') %></h1>
+<header>
+  <h1><%= t('weather_info.heading') %></h1>
+</header>
 
 <% flash.each do |type, msg| %>
-  <div>
+  <div class="notice">
     <%= msg %>
   </div>
 <% end %>
@@ -16,7 +18,7 @@
   <div><%= I18n.t('weather_info.labels.current_temp', temp: @weather[:temp]) %> ℉</div>
   <div><%= I18n.t('weather_info.labels.min_temp', temp: @weather[:temp_min]) %> ℉</div>
   <div><%= I18n.t('weather_info.labels.max_temp', temp: @weather[:temp_max]) %> ℉</div>
-  <div>
+  <div class="notice">
     <%= show_cache_message(@weather[:cached]) %>
   </div>
 <% end %>
